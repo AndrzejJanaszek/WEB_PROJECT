@@ -1,0 +1,96 @@
+gra{
+    tytuł
+    opis
+    cena
+    platformy
+    kategorie
+    //jakies zdjęcia też - linki do zdjęć
+    data-premiery
+    ilosc zakupiony7ch kopii
+}
+
+do importu osobno:
+menu
+footer
+
+
+main - home - index:
+menu
+sekcje:"
+    polecane - większe koło 4/5 na stronie - max width
+    trends - małe tyle ile się zmieści scrollowalne lewo prawo
+    reszta - w gridzie
+footer
+
+gra_box
+    img
+    tytuł
+    cena
+    buy_btn
+
+
+baza danych:
+produkt{
+    id
+    tytuł
+    opis
+    cena
+    --platformy
+    --kategorie
+    //jakies zdjęcia też - linki do zdjęć
+    data-premiery
+    ilosc zakupiony7ch kopii
+    polecane_przez_partie
+}
+
+prodKategoria{
+    id
+    id_prod
+    id_kat
+}
+prodPlatforma{
+    id
+    id_prod
+    id_platformy
+}
+
+kategorie{
+    id
+    nazwa
+}
+
+platformy{
+    id
+    nazwa
+}
+
+user{
+    id
+    imie
+    nazwisko
+    data-urodzenia
+    email
+    nr tel
+}
+
+koszyk{
+    id
+    id_usera
+    id_produktu
+    ilosc
+}
+
+---cookiesy
+
+transakcje{
+    id
+    id_usera
+    data-dokonania
+    kwota
+}
+
+kupione_prod{
+    id
+    id_transakcji
+    id_produktu
+}

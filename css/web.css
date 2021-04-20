@@ -1,0 +1,22 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+:root{
+    --color--main: rgb(230,0,0);
+    --color--dark: rgb(0, 0, 0);
+    --color--light: rgb(255, 255, 255);
+
+    --font_color--dark: rgb(0, 0, 0);
+    --font_color--light: rgb(255, 255, 255);
+}
+header.header{
+    width: 100%;
+}
+.header__top{
+    width: 100%;
+    background-color: var(--color--dark);
+    color: var(--font_color--light);
+}
+.header__bottom{
+    width: 100%;
+    background-color: var(--color--light);
+    color: var(--font_color--dark);
+}

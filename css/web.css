@@ -28,6 +28,7 @@ input:focus, select:focus, button:focus{
 
 /* ---------------------------- HEADER ---------------------------- */
 header.header{
+    z-index: 1000;
     width: 100%;
     line-height: 1.5;
     box-shadow: 0 .4rem .4rem rgba(0, 0, 0, .25);
@@ -133,3 +134,61 @@ header.header{
 
 
 /* ---------------------------- FOOTER ---------------------------- */
+
+
+footer{
+    width: 100%;
+    background-color: var(--color--dark);
+    color: var(--color--light);
+}
+.footer__main{
+    letter-spacing: .1ch;
+    padding: 1rem 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__main__menu{
+    position: relative;
+}
+.footer__main__menu > ul::after{
+    position: absolute;
+    bottom: 50%;
+    width: 110%;
+    height: .3rem;
+    background-color: #fff;
+    content: '';
+}
+.footer__main__menu > ul{
+    line-height: 6.5rem;
+    font-size: 2rem;
+    gap: 3rem;
+    list-style: none;
+    display: flex;
+}
+.footer__main__contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.footer__main__contact__logo{
+    font-size: 2rem;
+    padding-bottom: .4rem;
+    font-family: 'Stalinist One', cursive;
+}
+.footer__main__contact__data{
+    font-size: 1.4rem;
+    padding: .25rem 0 ;
+}
+.footer__main__contact__data > i{
+    padding: 0 .3ch 0 0;
+}
+.footer__copyr{
+    width: 100%;
+    background-color: #eee;
+    color: var(--color--dark);
+    padding: .5rem 0;
+    text-align: center;
+}

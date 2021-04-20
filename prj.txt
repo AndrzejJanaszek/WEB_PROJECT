@@ -28,19 +28,23 @@ gra_box
     cena
     buy_btn
 
-
+//------------------------------------------------------
 baza danych:
 produkt{
     id
     tytuł
     opis
     cena
-    --platformy
-    --kategorie
-    //jakies zdjęcia też - linki do zdjęć
+    
     data-premiery
     ilosc zakupiony7ch kopii
     polecane_przez_partie
+}
+
+produkt_zdjęcie{
+    id
+    id_prod
+    ścieżka_do_zdjęcia
 }
 
 prodKategoria{

@@ -20,27 +20,25 @@
     </div>
     <div class="header__bottom">
         <div class="header__bottom__logo">
-            <a href="#">OURGAMES</a>
+            <a href="#">OUR<span class="logo--red">GAMES</span></a>
         </div>
         <div class="header__bottom__right">
-            <div class="header__bottom__right__search_box">
-                <form action="" method="POST">
-                    <input type="text" name="key_words">
-                    <select name="category">
-                        <option value="">wszystkie</option>
-                        <option value="">|to będzie</option>
-                        <option value="">generowane</option>
-                        <option value="">z php(kategorie)|</option>
-                    </select>
-                    <select name="platform">
-                        <option value="">wszystkie</option>
-                        <option value="">|to będzie</option>
-                        <option value="">generowane</option>
-                        <option value="">z php(kategorie)|</option>
-                    </select>
-                    <button type="submit"><span class="material-icons-outlined">search</span></button>
-                </form>
-            </div>
+            <form action="" method="POST" class="search_box">
+                <input type="text" name="key_words" placeholder="Szukaj...">
+                <select name="category">
+                    <option value="">wszystkie</option>
+                    <option value="">|to będzie</option>
+                    <option value="">generowane</option>
+                    <option value="">z php(kategorie)|</option>
+                </select>
+                <select name="platform">
+                    <option value="">wszystkie</option>
+                    <option value="">|to będzie</option>
+                    <option value="">generowane</option>
+                    <option value="">z php(kategorie)|</option>
+                </select>
+                <button type="submit"><span class="material-icons-outlined">search</span></button>
+            </form>
             <div class="header__bottom__right__menu">
                 <ul>
                     <li><a href="#">Kategorie</a></li>

@@ -3,6 +3,7 @@
 <script src="https://kit.fontawesome.com/6a0c625264.js" crossorigin="anonymous"></script>
 
 <?php
+session_start();
 // $mainDir = $_SERVER['DOCUMENT_ROOT']."/WEB_PROJECT"."/";
 $mainDir = "http://127.0.0.1"."/WEB_PROJEKT"."/";
 ?>

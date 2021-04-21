@@ -187,8 +187,10 @@ footer{
 }
 .footer__copyr{
     width: 100%;
-    background-color: #eee;
-    color: var(--color--dark);
-    padding: .5rem 0;
+    background-color: #222;
+    color: #aaa;
+    padding: 1rem 0;
+    font-size: 1.3rem;
     text-align: center;
+    /* padding: .3ch 0; */
 }

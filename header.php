@@ -17,7 +17,15 @@ $mainDir = "http://127.0.0.1"."/WEB_PROJEKT"."/";
         <div class="header__top__account">
             <div class="header__top__account__signup">
                 <span class="material-icons">account_circle</span>
-                <a href="<?php echo "${mainDir}account/";?>">Zaloguj / Zarejestruj</a>
+<?php
+    if(isset($_SESSION["user_id"])){
+        echo '<a href="'."${mainDir}account/signout.php".'">Wyloguj</a>';
+    }
+    else{
+        echo '<a href="'."${mainDir}account/".'">Zaloguj / Zarejestruj</a>';
+    }
+?>
+                <!-- <a href="<?php //echo "${mainDir}account/";?>">Zaloguj / Zarejestruj</a> -->
             </div>
             <div class="header__top__account__cart">
                 <span class="material-icons">shopping_cart</span>
@@ -27,7 +35,7 @@ $mainDir = "http://127.0.0.1"."/WEB_PROJEKT"."/";
     </div>
     <div class="header__bottom">
         <div class="header__bottom__logo">
-            <a href="#">OUR<span class="logo--red">GAMES</span></a>
+            <a href="<?php echo "${mainDir}";?>">OUR<span class="logo--red">GAMES</span></a>
         </div>
         <div class="header__bottom__right">
             <form action="" method="POST" class="search_box">

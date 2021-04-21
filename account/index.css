@@ -1,0 +1,49 @@
+main{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    justify-items: center;
+    padding: 5rem 10%;
+    /* min-height: 100vh; */
+}
+main > form{
+    display: grid;
+    width: 70%;
+    row-gap: 1rem;
+}
+main::after{
+    position: absolute;
+    content: '';
+    height: 90%;
+    width: .3rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color--dark);
+}
+main > form > h1{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+main > form > input{
+    padding: 1ch;
+    font-size: 1.8rem;
+    border: .1rem solid rgba(0, 0, 0, .25);
+    box-shadow: 0 0 .4rem rgba(0, 0, 0, 0.25);
+}
+main > form > button{
+    background-color: var(--color--main);
+    border-radius: 1rem;
+    border: none;
+    color: var(--color--light);
+    padding: 1ch 2ch;
+    font-size: 1.8rem;
+    width: fit-content;
+    place-self: center;
+    margin-top: 1rem;
+    letter-spacing: .1ch;
+}
+main > form a{
+    color: royalblue;
+}

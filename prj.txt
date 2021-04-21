@@ -35,7 +35,6 @@ produkt{
     tytuł
     opis
     cena
-    
     data-premiery
     ilosc zakupiony7ch kopii
     polecane_przez_partie
@@ -98,3 +97,16 @@ kupione_prod{
     id_transakcji
     id_produktu
 }
+
+--------------------------------------------
+
+CREATE TABLE `user` (
+	id int PRIMARY KEY AUTO_INCREMENT not null,
+    name varchar(30) not null,
+    surname varchar(30) not null,
+    username varchar(20) not null,
+    password varchar(255) not null,
+    birthday date not null,
+    email varchar(255) not null,
+    tel varchar(9) not null
+);

@@ -1,0 +1,133 @@
+body{
+    display: grid;
+    grid-template-columns: 1fr 1.618fr;
+    place-items: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.admin_header{
+    grid-column: auto / span 2;
+}
+.admin_form__imgbox{
+    position: relative;
+    display: grid;
+    grid-gap: 1rem;
+    margin-bottom: 4rem;
+}
+.admin_form__imgbox__addbtn{
+    position: absolute;
+    bottom: -3rem;
+}
+.button--add{
+    background-color: #eee;
+    border: 2px solid black;
+    border-radius: 1rem;
+    line-height: 1;
+    padding: 1ch 2ch;
+    width: fit-content;
+    margin-top: 1rem;
+}
+.admin_form{
+    width: 60ch;
+    letter-spacing: .2ch;
+    display: grid;
+    
+    /* grid-template-columns: 1fr; */
+}
+.admin_form label, .platform_box, .category_box{
+    /* background-color: transparent; */
+    display: grid;
+    line-height: 2.5;
+    
+    /* margin: 1rem 0; */
+    /* grid-template-columns: 1fr; */
+}
+.admin_form label > *{
+    padding: 1ch;
+    box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.164),
+    -.5rem -.5rem 1rem rgba(230, 230, 230, 0.103);
+}
+.admin_form input, select{
+    border:none;
+    border-bottom: 4px solid  rgb(180, 0, 0);
+    background-color: #eee;
+}
+.admin_form input:focus, select:focus, textarea:focus{
+    outline: none;
+    border-bottom: 4px solid rgb(255, 0, 0);
+    /* background-color: #ddd; */
+}
+textarea{
+    border: 3px solid rgb(180, 0, 0);
+    /* background-color: #ccc; */
+}
+.admin_form__sub_btn{
+    margin-top: 1rem;
+    width: fit-content;
+    place-self: center;
+    padding: 1ch;
+}
+label.label__checkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+.admin_form__imgbox__label{
+    position: relative;
+}
+.admin_form__imgbox__label__rmbtn{
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    right:0;
+    line-height: 1rem;
+    background-color: rgb(177, 19, 19);
+}
+
+
+div.admin_form__platform_label__select_box{
+    position: relative;
+    padding: 0;
+    display: grid;
+}
+.admin_form__platform_label__select_box > *{
+    padding: 1ch;
+    box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.164),
+    -.5rem -.5rem 1rem rgba(230, 230, 230, 0.103);
+}
+.admin_form__platform_label__rmbtn{
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    right:0;
+    line-height: 1rem;
+    background-color: rgb(177, 19, 19);
+}
+
+.admin_form__category_label, .admin_form__platform_label{
+    grid-gap: 1rem;
+}
+div.admin_form__category_label__select_box{
+    position: relative;
+    padding: 0;
+    display: grid;
+}
+.admin_form__category_label__select_box > *{
+    padding: 1ch;
+    box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.164),
+    -.5rem -.5rem 1rem rgba(230, 230, 230, 0.103);
+}
+.admin_form__category_label__rmbtn{
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    right:0;
+    line-height: 1rem;
+    background-color: rgb(177, 19, 19);
+}
+
+
+.category_box, .platform_box{
+    margin-top: 2rem;
+}

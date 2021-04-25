@@ -45,7 +45,19 @@
             <label class="admin_form__platform_label">Platforma:
                 <div class="admin_form__platform_label__select_box">
                     <select name="platform[]" class="platform_select">
-                        <option value="">Dorobić z wczytywanie z php</option>
+                        <!-- <option value="">Dorobić z wczytywanie z php</option> -->
+                        <?php
+                            require_once "../connection.php";
+                            $conn = mysqli_connect($db_pass, $db_user, $db_pass, $db_name);
+                            if($conn){
+                                $platformsSQL = "SELECT * FROM platforms;";
+                                $platformsRESULT = $conn->query($platformsSQL);
+
+                                while($rekord = mysqli_fetch_assoc($platformsRESULT)){
+                                    echo '<option value="'.$rekord["id"].'">'.$rekord["name"].'</option>';
+                                }
+                            }
+                        ?>
                     </select>
                 </div>
                 <!-- <div class="admin_form__platform_label__rmbtn">X</div> -->
@@ -57,7 +69,19 @@
             <label class="admin_form__category_label">Kategoria:
                 <div class="admin_form__category_label__select_box">
                     <select name="category[]">
-                        <option value="">Dorobić z wczytywanie z php</option>
+                        <!-- <option value="">Dorobić z wczytywanie z php</option> -->
+                        <?php
+                            // require_once "../connection.php";
+                            // $conn = mysqli_connect($db_pass, $db_user, $db_pass, $db_name);
+                            if($conn){
+                                $categoriesSQL = "SELECT * FROM categories;";
+                                $categoriesRESULT = $conn->query($categoriesSQL);
+
+                                while($rekord = mysqli_fetch_assoc($categoriesRESULT)){
+                                    echo '<option value="'.$rekord["id"].'">'.$rekord["name"].'</option>';
+                                }
+                            }
+                        ?>
                         <!-- <div class="admin_form__category_label__rmbtn">X</div> -->
                     </select>
                 </div>
@@ -77,9 +101,36 @@
         
     </form>
     <div class="products_list">
-        <!-- tu ma wczytywać wszystkie gry -->asd
+        <!-- tu ma wczytywać wszystkie gry -->
         <?php
-            // TODO: PHP KTÓRE WYPISUJE WSZYSTKIE GRY Z 2 BUTTONAMI - EDIT/DELETE
+            // TODO: PHP KTÓRE WYPISUJE WSZYSTKIE GRY Z 2 BUTTONAMI - EDIT/DELETE +dodać slider ze zdjęciami czy coś takiego
+
+            /* 
+            tutuł
+            opis
+            kategorie platformy
+            data-premiery
+            zakupione kopie
+            recommended
+            */
+            if($conn){
+                $productsSQL = "SELECT * FROM product";
+                $productsRESULT = $conn->query($productsSQL);
+
+                while($rekord = mysqli_fetch_assoc($productsRESULT)){
+                    echo '
+                    <form action="delete_edit_product.php" method="post" class="product_box">
+                    <input type="hidden" name="product_id" value="'.$rekord["id"].'">
+                        <div class="title">'.$rekord["title"].'</div>
+                        <div class="product_box__btns">
+                            <button name="edit">Edytuj</button>
+                            <button name="delete">Usuń</button>
+                        </div>
+                    </form>
+                    ';
+                }
+            }
+            
         ?>
 
     </div>

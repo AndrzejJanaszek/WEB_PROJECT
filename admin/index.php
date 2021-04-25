@@ -18,12 +18,13 @@
 
     <form action="./add_product.php" class="admin_form" method="post">
         <!-- zdjęcia -->
-
+        <input type="hidden" name="primary" value="0" class="primary_input">
         <div class="admin_form__imgbox">
             <h2>Podaj nazwy zdjęć [nazwa.rozszerzenie] np. csgo.png
             </h2>
-            <label class="admin_form__imgbox__label">
+            <label class="admin_form__imgbox__label" data-id="0">
                 <input type="text" name="img_name[]" placeholder="nazwa zdjęcia">
+                <div class="admin_form__imgbox__label__primbtn primary_btn--active">M</div>
                 <!-- <div class="admin_form__imgbox__label__rmbtn">X</div> -->
             </label>
 

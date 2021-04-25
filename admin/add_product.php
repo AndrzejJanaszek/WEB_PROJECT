@@ -1,10 +1,11 @@
 <?php
-    if(isset($_POST["title"]) && isset($_POST["description"]) &&isset($_POST["price"]) &&isset($_POST["release_date"]) &&isset($_POST["platform"]) && isset($_POST["category"])){
-        
+    if(isset($_POST["title"]) && isset($_POST["description"]) &&isset($_POST["price"]) && isset($_POST["release_date"]) &&isset($_POST["platform"]) && isset($_POST["category"]) && isset($_POST["primary"])){
+        if($_POST["title"] != "" && $_POST["description"] != "" && $_POST["price"] != "" && $_POST["release_date"] != "" && $_POST["platform"] != "" && $_POST["category"] != ""){
         require_once "../connection.php";
         $conn = mysqli_connect($db_pass, $db_user, $db_pass, $db_name);
         
         if($conn){
+            $imgs = $_POST["img_name"];
             $title = $_POST["title"];
             $description = $_POST["description"];
             $price = $_POST["price"];
@@ -17,9 +18,12 @@
 
 
             // WSTAWIANIE REKORDU DO TABELI `product`
-            $prod_PRE = $conn->prepare("INSERT INTO `product` (`id`, `title`, `description`, `price`, `release_date`, `bought_copies_count`, `recommended`) VALUES (NULL, '?', '?', '?', '?', '0', '?')");
-            $prod_PRE->bind_param($title, $description, $price, $release_date, $recommended);
+            $prod_PRE = $conn->prepare("INSERT INTO `product` (`id`, `title`, `description`, `price`, `release_date`, `bought_copies_count`, `recommended`) VALUES ('', ?, ?, ?, ?, '0', ?)");
+            
+            $prod_PRE->bind_param("sssss", $title, $description, $price, $release_date, $recommended);
             $prod_PRE->execute();
+
+            // INSERT INTO `product` (`id`, `title`, `description`, `price`, `release_date`, `bought_copies_count`, `recommended`) VALUES (NULL, '?', '?', '?', '?', '0', '?')
 
             //POBRANIE ID WSTAWIONEJ GRY
             $product_id = $prod_PRE->insert_id;
@@ -28,33 +32,41 @@
             // WSTAWIANIE REKORDU DO TABELI `prod_cat`
             // INSERT INTO `prod_cat` (`id`, `id_product`, `id_category`) VALUES (NULL, '', '')
 
-            $prodCat_PRE = $conn->prepare("INSERT INTO `prod_cat` (`id`, `id_product`, `id_category`) VALUES (NULL, '?', '?')");
-            $prodCat_PRE->bind_param($$product_id, $category);
-            $prodCat_PRE->execute();
+            foreach($category as $cat){
+                $prodCat_PRE = $conn->prepare("INSERT INTO `prod_cat` (`id`, `id_product`, `id_category`) VALUES (NULL, ?, ?)");
+                $prodCat_PRE->bind_param("ss",$product_id, $cat);
+                $prodCat_PRE->execute();
+            }
+
+            
 
             // WSTAWIANIE REKORDU DO TABELI `prod_plat`
             // INSERT INTO `prod_cat` (`id`, `id_product`, `id_category`) VALUES (NULL, '', '')
-            $prodPlat_PRE = $conn->prepare("INSERT INTO `INSERT INTO `prod_plat` (`id`, `id_product`, `id_platform`) VALUES (NULL, '?', '?')");
-            $prodPlat_PRE->bind_param($product_id, $platform);
-            $prodPlat_PRE->execute();
+
+            foreach($platform as $plat){
+                $prodPlat_PRE = $conn->prepare("INSERT INTO `prod_plat` (`id`, `id_product`, `id_platform`) VALUES (NULL, ?, ?)");
+                $prodPlat_PRE->bind_param("ss",$product_id, $plat);
+                $prodPlat_PRE->execute();
+            }
+
+            // WSTAWIANIE REKORDU DO TABELI `prod_img`
+            // INSERT INTO `prod_cat` (`id`, `id_product`, `id_category`) VALUES (NULL, '', '')
+
+            $i = 0;
+            $primary = $_POST["primary"];
+            foreach($imgs as $img_name){
+                $primaryBOOL = 0;
+                if($i == $primary){
+                    $primaryBOOL = 1;
+                }
+                $prodPlat_PRE = $conn->prepare("INSERT INTO `prod_img` (`id`, `primary`, `id_prod`, `img_name`) VALUES (NULL, ?, ?, ?)");
+                $prodPlat_PRE->bind_param("sss",$primaryBOOL, $product_id, $img_name);
+                $prodPlat_PRE->execute();
+                $i++;
+            }
             
+        }
         }
 
     }
-
-    "INSERT INTO `product` (`id`, `title`, `description`, `price`, `release_date`, `bought_copies_count`, `recommended`) VALUES (NULL, '', '', '', '', '', '')"
 ?>
-
-
-<!-- 
-title
-description
-price
-release_date
-
-recommended
-
-platform
-category
-
- -->

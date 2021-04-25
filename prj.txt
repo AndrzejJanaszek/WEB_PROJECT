@@ -118,11 +118,11 @@ CREATE TABLE `product` (
     description text not null,
     price float not null,
     release_date date not null,
-    bought_copies_count date not null,
+    bought_copies_count int not null,
     recommended boolean not null
 );
 
-CREATE TABLE `product_img` (
+CREATE TABLE `prod_img` (
 	id int PRIMARY KEY AUTO_INCREMENT not null,
     `primary` boolean not null,
     id_prod int not null,

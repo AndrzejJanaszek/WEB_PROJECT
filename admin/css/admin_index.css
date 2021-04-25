@@ -27,6 +27,17 @@ body{
     width: fit-content;
     margin-top: 1rem;
 }
+.admin_form__imgbox__label__primbtn{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 1rem;
+    background-color: rgb(255, 236, 130);
+    line-height: 1;
+}
+.primary_btn--active{
+    background-color: gold;
+}
 .admin_form{
     width: 60ch;
     letter-spacing: .2ch;

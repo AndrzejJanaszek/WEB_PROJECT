@@ -43,6 +43,9 @@ main > form > button{
     place-self: center;
     margin-top: 1rem;
     letter-spacing: .1ch;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 main > form a{
     color: royalblue;
@@ -55,17 +58,49 @@ main > form a{
 
 
 
+/* --------------------------------- RESPONSIVE --------------------------------- */
 @media screen and (max-width:950px){
     main{
         grid-template-columns: 1fr;
-        grid-auto-flow: dense;
     }
     main::after{
         display: none;
     }
-    main > form:last-child{
+    main > form:first-child{
         margin-top: 25px;
         padding-top: 25px;
-        border-top:1rem solid #000;
+        border-top:0.5rem solid #000;
+        grid-row: 2;
     }
+    main > form:last-child{
+        grid-row: 1;
+    }
+}
+@media screen and (max-width:650px){
+    main{
+        padding: 3rem 7%;
+    }
+    main > form{
+        width: 80%;
+    }
+}
+@media screen and (max-width:500px){
+    main{
+        padding: 2.5rem 5%;
+    }
+    main > form{
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+/* --------------------------------- PSEŁDO-KLASA-HAWER --------------------------------- */
+main > form > button:hover{
+    background-color: var(--color--dark);
 }

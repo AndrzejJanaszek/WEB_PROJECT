@@ -142,3 +142,17 @@ div.admin_form__category_label__select_box{
 .category_box, .platform_box{
     margin-top: 2rem;
 }
+
+
+
+
+
+.product_box{
+    padding: .3rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.product_box:nth-child(even){
+    background-color: #ccc;
+}

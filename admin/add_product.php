@@ -65,8 +65,20 @@
                 $i++;
             }
             
+            echo "Najprawdopodobniej się dodało. Jestem na 100% pewien, że chyba tak jest :)";
         }
+        else{
+            echo "Połączenie z bazą się nie powiodło pytaj Andrzeja";
+        }
+        }
+        else{
+            echo "Nie podałes wszystkich danych albo masz downa jeżeli nie wiesz co się dzieje spytaj Andrzeja";
         }
 
     }
+    else{
+        echo "Nie podałes wszystkich danych albo masz downa jeżeli nie wiesz co się dzieje spytaj Andrzeja";
+    }
+
+    echo '<br><a href="index.php" style="font-size: 5rem">Wróć do admin panelu</a>';
 ?>

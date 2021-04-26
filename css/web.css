@@ -51,6 +51,8 @@ header.header{
 .header__top__social > a{
     display: flex;
     align-items: center;
+
+    transition: color 0.3s;
 }
 .header__top__account{
     display: flex;
@@ -60,10 +62,14 @@ header.header{
     display: flex;
     padding-right: 2rem;
     gap: 1rem;
+
+    transition: color 0.3s;
 }
 .header__top__account__cart{
     display: flex;
     gap: 1rem;
+
+    transition: color 0.3s;
 }
 
 /* header__bottom */
@@ -81,6 +87,8 @@ header.header{
     font-family: 'Stalinist One', cursive;
     display: grid;
     place-items: center;
+
+    transition: transform 0.3s;
 }
 .logo--red{
     color: var(--color--main);
@@ -114,13 +122,16 @@ header.header{
     display: grid;
     place-items: center;
     border: none;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 .search_box > button > span{
     font-size: 120%;
     width: 1.5ch;
 }
 .search_box{
-    min-width: 40ch;
+    /* min-width: 40ch; */
 }
 .header__bottom__right__menu > ul{
     font-size: 2.3rem;
@@ -128,6 +139,20 @@ header.header{
     display: flex;
     list-style: none;
     justify-content: space-between;
+
+    position: relative;
+}
+.header__bottom__right__menu > ul > li > a::after{
+    content: '';
+    position: relative;
+    display: block;
+
+    height: 1px;
+    width:0%;
+
+    background-color: var(--color--dark);
+
+    transition: width 0.3s;
 }
 
 
@@ -194,6 +219,9 @@ footer{
     text-align: center;
     /* padding: .3ch 0; */
 }
+.footer__main__menu > ul > li > a{
+    transition: color 0.3s;
+}
 
 
 
@@ -227,15 +255,117 @@ footer{
         width: 100%;
     }
 }
+@media screen and (max-width:600px){
+    .header__top__account__signup a{
+        display:none;
+    }
+}
+@media screen and (max-width:500px){
+    .header__top{
+        padding: .4rem 2.5%;
+    }
+    .header__bottom{
+        padding: 1rem 2.5%;
+    }
+}
+@media screen and (max-width:420px){
+    /* .search_box{
+        display: flex;
+        flex-direction: column;
+    }
+    .search_box > input{
+        width: 100%;
+    }
+    .search_box > select{
+        width: 100%;
+        height:27px;
+    }
+    .search_box > button{
+        width:100%;
+        height:35px;
+    } */
+
+    .search_box{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .search_box > input{
+        width: 100%;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .search_box > select{
+        width:100%;
+        height:24px;
+    }
+    .search_box > button{
+        width:100%;
+        height:35px;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
 
 
 /* ---------------------------- FOOTER ---------------------------- */
 @media screen and (max-width:990px){
     .footer__main{
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+
+        padding: 2rem 10%;
     }
     .footer__main__menu{
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
+}
+@media screen and (max-width:600px){
+    .footer__main__menu{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer__main__menu > ul{
+        flex-direction: column;
+        gap:0;
+        line-height: 3.5rem;
+    }
+    .footer__main__menu > ul::after{
+        display:none;
+    }
+}
+
+@media screen and (max-width:500px){
+    .footer__main{
+        padding:1rem 2.5%;
+    }
+}
+
+
+
+
+
+
+
+
+/* --------------------------------- PSEŁDO-KLASA-HAWER --------------------------------- */
+.search_box > button:hover{
+    background-color: var(--color--main);
+}
+.header__top__social > a:hover{
+    color: var(--color--main);
+}
+.header__top__account__signup:hover{
+    color: var(--color--main);
+}
+.header__top__account__cart:hover{
+    color: var(--color--main);
+}
+.header__bottom__right__menu > ul > li > a:hover::after{
+    width:100%;
+}
+.header__bottom__logo:hover{
+    transform: scale(1.05);
+}
+.footer__main__menu > ul > li > a:hover{
+    color:var(--color--main);
 }

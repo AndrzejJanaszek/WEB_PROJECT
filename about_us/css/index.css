@@ -1,0 +1,79 @@
+/* --------------- MAIN --------------- */
+main{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    padding:5rem 15%;
+}
+main > section{
+    margin:4rem 0;
+}
+
+
+
+
+
+/* --------------- UPPER-SECTION --------------- */
+
+.upper_section{
+    display: flex;
+    flex-direction: row;
+}
+.upper_section h1{
+    font-size:2.7rem;
+    font-family: 'Stalinist One', cursive;
+}
+.logo{
+    margin-right: 10px;
+}
+.upper_section img{
+    height: 40px;
+}
+.upper_section__logo{
+    text-decoration: underline;
+}
+.upper_section__red{
+    color:var(--color--main);
+}
+.upper_section__logo .upper_section__red{
+    text-decoration: underline;
+}
+
+
+
+
+
+/* --------------- LOWER-SECTION --------------- */
+
+.lower_section{
+
+}
+.lower_section p{
+    line-height: 150%;
+    margin-top:20px;
+}
+
+
+
+
+
+/* --------------- QUOTE --------------- */
+.quote{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    font-style: italic;
+    line-height: 125%;
+
+    width:60%;
+}
+.author{
+    font-style: normal;
+
+    font-size:1.7rem;
+}

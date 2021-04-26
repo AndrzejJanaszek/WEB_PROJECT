@@ -38,9 +38,11 @@
             $get_imgsRESULT = $get_imgsPRE->get_result();
 
 
+            $product_id = $_POST["product_id"];
             echo '
             <link rel="stylesheet" href="css/admin_index.css">
-                <form action="./add_product.php" class="admin_form" method="post">
+                <form action="./edit_product.php" class="admin_form" method="post">
+                    <input type="hidden" name="product_id" value="'.$product_id.'">
                     <input type="hidden" name="primary" value="0" class="primary_input">
                     <div class="admin_form__imgbox">
                         <h2>Podaj nazwy zdjęć [nazwa.rozszerzenie] np. csgo.png
@@ -174,12 +176,6 @@
                 <script src="js/admin_panel.js"></script>
                 ';
         }
-
-
-
-           
-
-
 
     }
     elseif(isset($_POST["delete"])){

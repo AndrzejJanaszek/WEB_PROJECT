@@ -48,7 +48,7 @@
                         <!-- <option value="">Dorobić z wczytywanie z php</option> -->
                         <?php
                             require_once "../connection.php";
-                            $conn = mysqli_connect($db_pass, $db_user, $db_pass, $db_name);
+                            $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
                             if($conn){
                                 $platformsSQL = "SELECT * FROM platforms;";
                                 $platformsRESULT = $conn->query($platformsSQL);

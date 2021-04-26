@@ -118,7 +118,53 @@ function SetPrimaryIMG(reset){
 
 
 
-document.getElementsByClassName("admin_form__imgbox__label__primbtn")[0].addEventListener("click", SetPrimaryIMG);
+for(el of document.getElementsByClassName("admin_form__imgbox__label__primbtn")){
+el.addEventListener("click", SetPrimaryIMG);
+}
+
+
+// selecty krzyżyki
+krzyzyk_index = 0;
+for(el of document.getElementsByClassName("admin_form__imgbox__label")){
+    if(krzyzyk_index != 0){
+        const rmBtn = document.createElement("div");
+        rmBtn.classList.add("admin_form__imgbox__label__rmbtn");
+        rmBtn.textContent = "X";
+        rmBtn.addEventListener("click", RemoveParent);
+        el.appendChild(rmBtn);
+    }
+
+    krzyzyk_index++;
+}
+krzyzyk_index = 0;
+for(el of document.getElementsByClassName("admin_form__platform_label__select_box")){
+    if(krzyzyk_index != 0){
+        const rmBtn = document.createElement("div");
+        rmBtn.classList.add("admin_form__platform_label__rmbtn");
+        rmBtn.textContent = "X";
+        rmBtn.addEventListener("click", RemoveParent);
+        el.appendChild(rmBtn);
+    }
+
+    krzyzyk_index++;
+}
+krzyzyk_index = 0;
+console.log(document.getElementsByClassName("admin_form__category_label__select_box"));
+for(el of document.getElementsByClassName("admin_form__category_label__select_box")){
+    if(krzyzyk_index != 0){
+        console.log("asdasd");
+        const rmBtn = document.createElement("div");
+        rmBtn.classList.add("admin_form__category_label__rmbtn");
+        rmBtn.textContent = "X";
+        rmBtn.addEventListener("click", RemoveParent);
+        el.appendChild(rmBtn);
+    }
+
+    krzyzyk_index++;
+}
+
+document.getElementsByClassName("primary_input")[0].value = document.getElementsByClassName("primary_btn--active")[0].parentNode.getAttribute("data-id");
+
 add_img_btn.addEventListener("click", AddImgInput);
 add_plat_btn.addEventListener("click", AddPlatformSelect);
 add_cat_btn.addEventListener("click", AddCategorySelect);

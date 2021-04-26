@@ -2,7 +2,7 @@
     if(isset($_POST["title"]) && isset($_POST["description"]) &&isset($_POST["price"]) && isset($_POST["release_date"]) &&isset($_POST["platform"]) && isset($_POST["category"]) && isset($_POST["primary"])){
         if($_POST["title"] != "" && $_POST["description"] != "" && $_POST["price"] != "" && $_POST["release_date"] != "" && $_POST["platform"] != "" && $_POST["category"] != ""){
         require_once "../connection.php";
-        $conn = mysqli_connect($db_pass, $db_user, $db_pass, $db_name);
+        $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
         
         if($conn){
             $imgs = $_POST["img_name"];

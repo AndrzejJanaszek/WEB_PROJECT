@@ -194,3 +194,48 @@ footer{
     text-align: center;
     /* padding: .3ch 0; */
 }
+
+
+
+
+
+
+
+
+/* --------------------------------- RESPONSIVE --------------------------------- */
+
+/* ---------------------------- HEADER ---------------------------- */
+@media screen and (max-width:1100px){
+    .header__bottom{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1rem 10%;
+    }
+    .header__bottom__right{
+        justify-content: center;
+        align-items: center;
+    }
+    .header__bottom__right__menu{
+        display: none;
+    }
+    .search_box > input{
+        width: auto;
+    }
+    .search_box{
+        display: grid;
+        grid-template-columns: auto 81px 81px 50px;
+        width: 100%;
+    }
+}
+
+
+/* ---------------------------- FOOTER ---------------------------- */
+@media screen and (max-width:990px){
+    .footer__main{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer__main__menu{
+        margin-bottom: 50px;
+    }
+}

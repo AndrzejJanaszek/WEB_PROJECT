@@ -25,10 +25,11 @@
             while($row = mysqli_fetch_assoc($prod_boxRESULT)){
                 echo '
                 <div class="product_box'.$isRecommended.'">
-                    <img src="products_img/'.$row["img_name"].'" alt="" class="product_box__img">
+                    <!--<img src="products_img/'.$row["img_name"].'" alt="" class="product_box__img">--!>
+                    <img src="products_img/csgo1.jpg" alt="" class="product_box__img">
                     <div class="product_box__content">
                         <a class="product_box__content__title" href="product/index.php?prod_id='.$row["id"].'">'.$row["title"].'</a>
-                        <div class="product_box__content__price">'.$row["price"].'</div>
+                        <div class="product_box__content__price">'.$row["price"].'zł</div>
                         <button class="product_box__content__btn" data-id="'.$row["id"].'">
                             <!-- iconka --!>
                             <span class="material-icons-round">shopping_basket</span>

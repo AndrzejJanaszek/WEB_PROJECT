@@ -16,7 +16,7 @@
     <main>
         
         <img src="img/lenin.png" alt="Lenin mówiący oj nie, nie burżujku -1">
-        <p>Polityka prywatności to wymysł zachodnich imperialistów, kapitalistów i reakcjonistów. Nie dopuszczalnym jest więc, by Partia zezwoliła na wprowadzanie tak haniebnych praktyk na stronę sklepu przeznaczonego dla ludzi pracy. Nasz sklep to odpowiedź na potrzeby ludu, a nie burżuazyjne zachcianki uciskaczy ludu. Apelujemy więc o ponowne rozpatrzenie Drogi Towarzyszu, czy na pewno chciałeś znaleźć się na tej stronie i co chciałeś na niej znaleźć.</p>
+        <p>Polityka prywatności to wymysł zachodnich <span class="red_font">imperialistów, kapitalistów i reakcjonistów</span>. Nie dopuszczalnym jest więc, by Partia zezwoliła na wprowadzanie tak haniebnych <span class="red_font"> burżuazyjnych</span> praktyk na stronę sklepu przeznaczonego dla ludzi pracy. Nasz sklep to odpowiedź na potrzeby ludu, a nie <span class="red_font">burżuazyjne zachcianki uciskaczy ludu</span>. Apelujemy więc o ponowne rozpatrzenie Drogi Towarzyszu, czy na pewno chciałeś znaleźć się na tej stronie i co chciałeś na niej znaleźć.</p>
 
     </main>
     <?php require_once "../footer.php"; ?>

@@ -1,0 +1,144 @@
+main{
+    width: 100%;
+
+    padding:5rem 10%;
+}
+
+.shopping_cart{
+    display: flex;
+    flex-direction: column;
+}
+
+.shopping_cart__header{
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.5rem;
+}
+.product-box{
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    border-bottom: 1px solid #000;
+}
+.shopping_cart__bottom{
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr;
+}
+.shopping_cart__bottom__manage button{
+    outline:none;
+    border:none;
+    background: none;
+    cursor: pointer;
+}
+.clear_cart_btn{
+    color:var(--color--main);
+}
+.zam_btn{
+    background-color: #000;
+    color:#fff;
+    font-size:2rem;
+    font-weight: 900;
+    height:4rem;
+    border:none;
+    outline: none;
+    transition: color 0.3s;
+    cursor: pointer;
+    margin-top:5rem;
+    margin-bottom:2rem;
+}
+.zam_btn:hover{
+    color:var(--color--main);
+}
+.shopping_details__delivery{
+    border-bottom:2px solid rgb(145, 145, 145);
+    padding-bottom:1rem;
+    margin-bottom:4rem;
+}
+.shopping_details__payment{
+    border-bottom:2px solid rgb(145, 145, 145);
+    padding-bottom:1rem;
+    margin-bottom:4rem;
+}
+.shopping_details__summary{
+    border-bottom:2px solid rgb(145, 145, 145);
+    padding-bottom:1rem;
+    margin-bottom:4rem;
+}
+main form{
+    display: flex;
+    flex-direction: column;
+}
+main form label{
+    display: flex;
+    flex-direction: column;
+}
+main form label input{
+    max-width: 400px;
+    margin:0.3rem 0;
+    height: 2.5rem;
+}
+main form label textarea{
+    max-width: 500px;
+}
+main form .accept{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding-bottom:1rem;
+    margin-bottom:1rem;
+
+    border-bottom:2px solid rgb(145, 145, 145);
+}
+main form .accept p{
+    margin:0;
+    margin-left: 0.5rem;
+}
+main form .accept p a{
+    color:rgb(41, 103, 238);
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
+main form button{
+    font-size:2rem;
+    font-weight: 900;
+    height:4rem;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width:150px;
+}
+.cancel_button{
+    background-color: var(--color--main);
+    color:#fff;
+}
+.order_button{
+    background-color: #000;
+    color:#fff;
+
+    margin-right: 1rem;
+}
+
+
+
+
+
+
+
+
+
+/* --------------------------------- RESPONSIVE --------------------------------- */
+@media screen and (max-width:780px){
+    .shopping_cart__bottom{
+        grid-template-columns: 2fr 1fr 2fr 1fr;
+    }
+}
+@media screen and (max-width:500px){
+    main{
+        padding:5rem 2.5%;
+    }
+}

@@ -18,8 +18,9 @@
             $result = $checkPre->get_result();
             if($result->num_rows > 0){
                 $row = mysqli_fetch_assoc($result);
+                var_dump($row);
                 if(password_verify($_POST["password"], $row["password"])){
-                    $_SESSION["user_id"] = $row["id"];
+                    $_SESSION["user_id"] = strval($row["id"]) ;
                     header("Location: ../index.php");
                 }
             }

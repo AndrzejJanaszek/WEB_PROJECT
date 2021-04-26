@@ -6,8 +6,9 @@
 session_start();
 // $mainDir = $_SERVER['DOCUMENT_ROOT']."/WEB_PROJECT"."/";
 $mainDir = "http://menyl.ct8.pl/"."/WEB_PROJEKT"."/";
+
 require_once "connection.php";
-$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+$connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 ?>
 
 <header class="header">
@@ -30,10 +31,10 @@ $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 ?>
                 <!-- <a href="<?php //echo "${mainDir}account/";?>">Zaloguj / Zarejestruj</a> -->
             </div>
-            <a class="header__top__account__cart" href="<?php echo "${mainDir}shopping_cart/";?>">
+            <div class="header__top__account__cart">
                 <span class="material-icons">shopping_cart</span>
                 <div class="cart__value">0,00zł</div>
-            </a>
+            </div>
         </div>
     </div>
     <div class="header__bottom">
@@ -44,7 +45,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
             <form action="" method="POST" class="search_box">
                 <input type="text" name="key_words" placeholder="Szukaj...">
                 <select name="category">
-                <?php
+                   <?php
                    if($conn){
                         $categoriesSQL = "SELECT * FROM categories;";
                         $categoriesRESULT = $conn->query($categoriesSQL);
@@ -73,14 +74,10 @@ $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
             </form>
             <div class="header__bottom__right__menu">
                 <ul>
-                    <?php
-                    echo '
                     <li><a href="#">Kategorie</a></li>
                     <li><a href="#">Aktualności</a></li>
-                    <li><a href="'.$mainDir.'/about_us/">O nas</a></li>
-                    <li><a href="'.$mainDir.'/contact_us/">Kontakt</a></li>
-                    ';
-                    ?>
+                    <li><a href="#">O nas</a></li>
+                    <li><a href="#">Kontakt</a></li>
                 </ul>
             </div>
         </div>

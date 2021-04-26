@@ -33,7 +33,7 @@
     </div>
 </div>
 <div class="footer__copyr">
-  Partia Graczy Pracujących (PGP) &copy; 2021 and for allways
+  Partia Graczy Pracujących (PGP) &copy; 2021 and for always
   <!-- NASI TOWARZYSZE Z PARTII GRACZY PRACUJĄCYCH  -->
 </div>
 </footer>

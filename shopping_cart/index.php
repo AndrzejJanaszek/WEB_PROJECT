@@ -31,8 +31,10 @@
     
                     $user_id = $_SESSION["user_id"];
 
-                    $shopping_cartRESULT = $conn->query("SELECT * FROM product,shopping_cart WHERE id_user = ".$user_id." AND product.id = shopping_cart.id_product");
+                    $shopping_cartRESULT = $conn->query("SELECT * FROM product, shopping_cart WHERE id_user = ".$user_id." AND product.id = shopping_cart.id_product");
                     
+                    var_dump( mysqli_fetch_assoc($shopping_cartRESULT));
+
                     if($shopping_cartRESULT->num_rows > 0){
                         while($rekord = mysqli_fetch_assoc($shopping_cartRESULT)){
                             echo '

@@ -1,0 +1,26 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 4rem 10%;
+}
+img{
+    width:80%;
+    box-shadow: 0 0 30px var(--color--dark);
+}
+p{
+    width:90%;
+}
+
+
+
+
+
+/* --------------------------------- RESPONSIVE --------------------------------- */
+@media screen and (max-width:500px){
+    main{
+        padding: 4rem 2.5%;
+    }
+}

@@ -50,7 +50,7 @@
                 require_once "connection.php";
                 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
-                ProductBox($conn, "SELECT * FROM product, prod_img WHERE recommended = 1 AND `primary` = 1 AND id_prod = product.id limit 5", true);           
+                ProductBox($conn, "SELECT product.id, product.title, product.price, prod_img.img_name FROM product, prod_img WHERE recommended = 1 AND `primary` = 1 AND id_prod = product.id limit 5", true);           
 
             ?>
 

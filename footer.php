@@ -2,14 +2,21 @@
 <div class="footer__main">
     <div class="footer__main__menu">
         <ul>
-            <li><a href="#">Kategorie</a></li>
-            <li><a href="#">Aktualności </a></li>
-            <li><a href="#">O nas</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <?php
+            echo '
+                <li><a href="#">Kategorie</a></li>
+                <li><a href="#">Aktualności </a></li>
+                <li><a href="'.$mainDir.'/about_us/">O nas</a></li>
+                <li><a href="'.$mainDir.'/contact_us/">Kontakt</a></li>
+                ';
+            ?>
         </ul>
         <ul>
-            <li><a href="#">Polityka prywatności</a></li>
-            <li><a href="#">Regulamin</a></li>
+            <?php
+            echo '
+                <li><a href="'.$mainDir.'/private_policy/">Polityka prywatności</a></li>
+                <li><a href="'.$mainDir.'/statute/">Regulamin</a></li>';
+            ?>
         </ul>
     </div>
     <div class="footer__main__contact">

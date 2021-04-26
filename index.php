@@ -12,7 +12,35 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <?php require_once "header.php"; ?>
+    <?php require_once "header.php"; 
+
+    function ProductBox($connection, $query, $isRecommended = ''){
+        if($connection){
+            if($isRecommended == true){
+                $isRecommended = " product_box--recommended";
+            }
+    
+            $prod_boxRESULT = $connection->query($query);
+                        
+            while($row = mysqli_fetch_assoc($prod_boxRESULT)){
+                echo '
+                <div class="product_box'.$isRecommended.'">
+                    <img src="products_img/'.$row["img_name"].'" alt="" class="product_box__img">
+                    <div class="product_box__content">
+                        <a class="product_box__content__title" href="product/index.php?prod_id='.$row["id"].'">'.$row["title"].'</a>
+                        <div class="product_box__content__price">'.$row["price"].'</div>
+                        <button class="product_box__content__btn" data-id="'.$row["id"].'">
+                            <!-- iconka --!>
+                            <span class="material-icons-round">shopping_basket</span>
+                        </button>
+                    </div>
+                </div>
+                ';
+            }
+        }
+    }
+    
+    ?>
 
     <main>
         <!-- //TODO:   -->
@@ -21,25 +49,8 @@
             <?php
                 require_once "connection.php";
                 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-                if($conn){
-                    $recommendedRESULT = $conn->query("SELECT * FROM product, prod_img WHERE recommended = 1 AND `primary` = 1 AND id_prod = product.id limit 5");
-                    
-                    while($row = mysqli_fetch_assoc($recommendedRESULT)){
-                        echo '
-                        <div class="product_box product_box--recommended">
-                            <img src="products_img/'.$row["img_name"].'" alt="" class="product_box__img">
-                            <div class="product_box__content">
-                                <div class="product_box__content__title">'.$row["title"].'</div>
-                                <div class="product_box__content__price">'.$row["price"].'</div>
-                                <button class="product_box__content__btn">
-                                    <!-- iconka --!>
-                                    <span class="material-icons-round">shopping_basket</span>
-                                </button>
-                            </div>
-                        </div>
-                        ';
-                    }
-                }                
+
+                ProductBox($conn, "SELECT * FROM product, prod_img WHERE recommended = 1 AND `primary` = 1 AND id_prod = product.id limit 5", true);           
 
             ?>
 
@@ -60,37 +71,25 @@
             <h1>bestsellery</h1>
             <!-- małe slider wczytywany boxy -->
             <?php
-                require_once "connection.php";
-                $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-                if($conn){
-                    $recommendedRESULT = $conn->query("SELECT product.id, product.title, product.price, prod_img.img_name  FROM product, prod_img WHERE `primary` = 1 AND id_prod = product.id ORDER BY bought_copies_count DESC limit 8");
-                    
-                    while($row = mysqli_fetch_assoc($recommendedRESULT)){
-                        echo '
-                        <div class="product_box product_box--recommended">
-                            <img src="products_img/'.$row["img_name"].'" alt="" class="product_box__img">
-                            <div class="product_box__content">
-                                <div class="product_box__content__title">'.$row["title"].'</div>
-                                <div class="product_box__content__price">'.$row["price"].'</div>
-                                <button class="product_box__content__btn" data-prod_id="'.$row["id"].'">
-                                    <!-- iconka --!>
-                                    <span class="material-icons-round">shopping_basket</span>
-                                </button>
-                            </div>
-                        </div>
-                        ';
-                    }
-                }                
+            ProductBox($conn, "SELECT product.id, product.title, product.price, prod_img.img_name  FROM product, prod_img WHERE `primary` = 1 AND id_prod = product.id ORDER BY bought_copies_count DESC limit 8");
 
             ?>
             
         </section>
         <section class="latests_section">
+            <h1>najnowsze produkty</h1>
             <!-- TO SAMO CO WYŻEJ - małe slider wczytywany boxy -->
-           
+            <?php
+            ProductBox($conn, "SELECT product.id, product.title, product.price, prod_img.img_name  FROM product, prod_img WHERE `primary` = 1 AND id_prod = product.id ORDER BY release_date DESC limit 8");    
+
+            ?>
         </section>
         <section class="others_section">
+            <h1>inne produkty</h1>
             <!-- grid z grami -->
+            <?php
+            ProductBox($conn, "SELECT product.id, product.title, product.price, prod_img.img_name  FROM product, prod_img WHERE `primary` = 1 AND id_prod = product.id limit 50");
+            ?> 
         </section>
 
     </main>
@@ -107,5 +106,7 @@
  -->
     
     <?php require_once "footer.php"; ?>
+
+    <script src="js/index.js"></script>
 </body>
 </html>

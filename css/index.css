@@ -6,6 +6,11 @@ main{
 
 section h1{
     grid-column: 1 / -1;
+    font-size: 3rem;
+    text-transform: uppercase;
+    line-height: 2;
+    border: .3rem solid black;
+    margin-bottom: 1rem;
 }
 
 
@@ -18,7 +23,6 @@ section h1{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: min-content;
-
 }
 
 .product_box{
@@ -46,14 +50,14 @@ section h1{
 
 /* ---------------- BESTSELLERS SECTION ---------------- */
 
-.latests_section, .bestsellers_section{
+.latests_section, .bestsellers_section, .others_section{
     width: 100%;
     min-height: 70vh;
     padding: 0 10%;
     
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    
+    grid-template-rows: min-content;
 }
 
 
@@ -68,3 +72,14 @@ section h1{
 
 
 /* ----------------  ---------------- */
+
+
+
+
+
+
+
+
+.others_section{
+
+}

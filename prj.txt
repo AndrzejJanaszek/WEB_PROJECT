@@ -150,3 +150,10 @@ CREATE TABLE `platforms` (
 	id int PRIMARY KEY AUTO_INCREMENT not null,
     name varchar(50) not null
 );
+
+CREATE TABLE `shopping_cart` (
+	id int PRIMARY KEY AUTO_INCREMENT not null,
+    id_user int not null,
+    id_product int not null,
+    amount int not null
+);

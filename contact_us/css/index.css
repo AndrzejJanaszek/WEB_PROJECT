@@ -1,0 +1,71 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 4rem 10%;
+}
+.main__contact{
+    display: flex;
+    flex-direction: column;
+}
+.main__contact__logo{
+    font-family: 'Stalinist One', cursive;
+    font-size: 4rem;
+    border-bottom: 1px solid #000;
+}
+.logo--red{
+
+}
+.main__contact__data{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    font-size: 3rem;
+    margin:1rem 0;
+}
+.main__contact__data i{
+    font-size: 4rem;
+    margin-right: 1rem;
+}
+
+
+
+
+
+/* --------------------------------- RESPONSIVE --------------------------------- */
+@media screen and (max-width:750px){
+    .main__contact__logo{
+        font-size: 3rem;
+    }
+    .main__contact__data{
+        font-size: 2.5rem;
+        margin:1rem 0;
+    }
+    .main__contact__data i{
+        font-size: 3rem;
+        margin-right: 1rem;
+    }
+}
+@media screen and (max-width:600px){
+    .main__contact__logo{
+        font-size: 2.8rem;
+    }
+    .main__contact__data{
+        font-size: 2rem;
+        margin:1rem 0;
+    }
+    .main__contact__data i{
+        font-size: 2.5rem;
+        margin-right: 1rem;
+    }
+}
+@media screen and (max-width:500px){
+    main{
+        padding: 4rem 2.5%;
+    }
+    .main__contact__data{
+        margin:0.5rem 0;
+    }
+}

@@ -6,6 +6,9 @@
 session_start();
 // $mainDir = $_SERVER['DOCUMENT_ROOT']."/WEB_PROJECT"."/";
 $mainDir = "http://menyl.ct8.pl/"."/WEB_PROJEKT"."/";
+
+require_once "connection.php";
+$connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 ?>
 
 <header class="header">
@@ -42,16 +45,30 @@ $mainDir = "http://menyl.ct8.pl/"."/WEB_PROJEKT"."/";
             <form action="" method="POST" class="search_box">
                 <input type="text" name="key_words" placeholder="Szukaj...">
                 <select name="category">
-                    <option value="">wszystkie</option>
-                    <option value="">|to będzie</option>
-                    <option value="">generowane</option>
-                    <option value="">z php(kategorie)|</option>
+                   <?php
+                   if($conn){
+                        $categoriesSQL = "SELECT * FROM categories;";
+                        $categoriesRESULT = $conn->query($categoriesSQL);
+
+                        echo '<option value="all">Wszystkie</option>';
+                        while($rekord = mysqli_fetch_assoc($categoriesRESULT)){
+                            echo '<option value="'.$rekord["id"].'">'.$rekord["name"].'</option>';
+                        }
+                    }
+                   ?>
                 </select>
                 <select name="platform">
-                    <option value="">wszystkie</option>
-                    <option value="">|to będzie</option>
-                    <option value="">generowane</option>
-                    <option value="">z php(kategorie)|</option>
+                <?php
+                   if($conn){
+                        $platformsSQL = "SELECT * FROM platforms;";
+                        $platformsRESULT = $conn->query($platformsSQL);
+
+                        echo '<option value="all">Wszystkie</option>';
+                        while($rekord = mysqli_fetch_assoc($platformsRESULT)){
+                            echo '<option value="'.$rekord["id"].'">'.$rekord["name"].'</option>';
+                        }
+                    }
+                   ?>
                 </select>
                 <button type="submit"><span class="material-icons-outlined">search</span></button>
             </form>

@@ -1,10 +1,11 @@
 main{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-row-gap:4rem;
 
     width: 100%;
 
-    margin:5rem 10%;
+    padding:5rem 20%;
 }
 
 
@@ -15,14 +16,26 @@ h1{
     grid-column-start: 1;
     grid-column-end: 3;
 
-    width:100%;
+    text-align: center;
+
+    font-size:4rem;
+
+    border-bottom: 1px solid #000;
+
+    padding:2rem;
 }
 
 
 
 /* ---------------- LEFT_UPPER_SECTION ---------------- */
 .left_upper_section{
-    width:100%;
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+}
+.left_upper_section h2{
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -31,7 +44,13 @@ h1{
 
 /* ---------------- RIGHT_UPPER_SECTION ---------------- */
 .right_upper_section{
+    display: flex;
+    flex-direction:column;
+    align-items: flex-end;
+}
+.right_upper_section img{
     width:100%;
+    box-shadow: 0 0 30px var(--color--dark);
 }
 
 
@@ -42,6 +61,80 @@ h1{
 .statute_section{
     grid-column-start: 1;
     grid-column-end: 3;
+}
+.statute_section > ol{
 
-    width:100%;
+}
+.statute_section > ol >li{
+    font-weight: 900;
+}
+.statute_section > ol >li > ol{
+    padding-left: 3rem;
+    font-weight: 400;
+}
+.statute_section > ol >li > ol > li{
+
+}
+.statute_section > ol >li > ol > li > ul{
+    padding-left: 5rem;
+}
+.statute_section > ol >li > ol > li > ul > li{
+
+}
+.list_none{
+    list-style: none;
+}
+
+
+
+
+
+/* ---------------- BUTTON ---------------- */
+.button_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.button_div a{
+    padding:2rem;
+    color:#fff;
+    font-weight: 900;
+    background-color: var(--color--main);
+    outline:0;
+    border:none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top:3rem;
+}
+.button_div a:hover{
+    background-color: var(--color--dark);
+}
+
+
+
+
+
+/* --------------------------------- RESPONSIVE --------------------------------- */
+@media screen and (max-width:1500px){
+    main{
+        padding:5rem 15%;
+    }
+}
+@media screen and (max-width:1300px){
+    main{
+        padding:5rem 10%;
+    }
+}
+@media screen and (max-width:500px){
+    .left_upper_section{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .right_upper_section{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
 }

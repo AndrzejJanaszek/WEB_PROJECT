@@ -17,7 +17,7 @@
         
         <h1>Regulamin</h1>
         <section class="left_upper_section">
-            <h2>Spis treści:</h2>
+            <h2>Spis treści</h2>
             <ol>
                 <li>Zapis dot. operatorów dźwigów.</li>
                 <li>Postanowienia ogólne.</li>
@@ -34,7 +34,7 @@
             </ol>
         </section>
         <section class="right_upper_section">
-            <img src="../img" src="Mem z Kraolem Marksem">
+            <img src="img/marx.png" alt="Mem z Kraolem Marksem">
         </section>
 
         <section class="statute_section">
@@ -160,7 +160,7 @@
         </section>
 
         <div class="button_div">
-            <button>Pobierz jako PDF</button>
+            <a href="">Pobierz jako PDF</a>
         </div>
 
     </main>

@@ -6,6 +6,8 @@
 session_start();
 // $mainDir = $_SERVER['DOCUMENT_ROOT']."/WEB_PROJECT"."/";
 $mainDir = "http://127.0.0.1"."/WEB_PROJEKT"."/";
+require_once "connection.php";
+$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 ?>
 
 <header class="header">
@@ -28,10 +30,10 @@ $mainDir = "http://127.0.0.1"."/WEB_PROJEKT"."/";
 ?>
                 <!-- <a href="<?php //echo "${mainDir}account/";?>">Zaloguj / Zarejestruj</a> -->
             </div>
-            <div class="header__top__account__cart">
+            <a class="header__top__account__cart" href="<?php echo "${mainDir}shopping_cart/";?>">
                 <span class="material-icons">shopping_cart</span>
                 <div class="cart__value">0,00zł</div>
-            </div>
+            </a>
         </div>
     </div>
     <div class="header__bottom">
@@ -42,25 +44,43 @@ $mainDir = "http://127.0.0.1"."/WEB_PROJEKT"."/";
             <form action="" method="POST" class="search_box">
                 <input type="text" name="key_words" placeholder="Szukaj...">
                 <select name="category">
-                    <option value="">wszystkie</option>
-                    <option value="">|to będzie</option>
-                    <option value="">generowane</option>
-                    <option value="">z php(kategorie)|</option>
+                <?php
+                   if($conn){
+                        $categoriesSQL = "SELECT * FROM categories;";
+                        $categoriesRESULT = $conn->query($categoriesSQL);
+
+                        echo '<option value="all">Wszystkie</option>';
+                        while($rekord = mysqli_fetch_assoc($categoriesRESULT)){
+                            echo '<option value="'.$rekord["id"].'">'.$rekord["name"].'</option>';
+                        }
+                    }
+                   ?>
                 </select>
                 <select name="platform">
-                    <option value="">wszystkie</option>
-                    <option value="">|to będzie</option>
-                    <option value="">generowane</option>
-                    <option value="">z php(kategorie)|</option>
+                <?php
+                   if($conn){
+                        $platformsSQL = "SELECT * FROM platforms;";
+                        $platformsRESULT = $conn->query($platformsSQL);
+
+                        echo '<option value="all">Wszystkie</option>';
+                        while($rekord = mysqli_fetch_assoc($platformsRESULT)){
+                            echo '<option value="'.$rekord["id"].'">'.$rekord["name"].'</option>';
+                        }
+                    }
+                   ?>
                 </select>
                 <button type="submit"><span class="material-icons-outlined">search</span></button>
             </form>
             <div class="header__bottom__right__menu">
                 <ul>
+                    <?php
+                    echo '
                     <li><a href="#">Kategorie</a></li>
                     <li><a href="#">Aktualności</a></li>
-                    <li><a href="#">O nas</a></li>
-                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="'.$mainDir.'/about_us/">O nas</a></li>
+                    <li><a href="'.$mainDir.'/contact_us/">Kontakt</a></li>
+                    ';
+                    ?>
                 </ul>
             </div>
         </div>

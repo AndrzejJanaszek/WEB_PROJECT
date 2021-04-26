@@ -1,0 +1,47 @@
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+
+    margin:5rem 10%;
+}
+
+
+
+
+
+h1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    width:100%;
+}
+
+
+
+/* ---------------- LEFT_UPPER_SECTION ---------------- */
+.left_upper_section{
+    width:100%;
+}
+
+
+
+
+
+/* ---------------- RIGHT_UPPER_SECTION ---------------- */
+.right_upper_section{
+    width:100%;
+}
+
+
+
+
+
+/* ---------------- STATUTE_SECTION ---------------- */
+.statute_section{
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    width:100%;
+}

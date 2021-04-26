@@ -1,9 +1,15 @@
 
-/* ---------------- RECOMMENDED SECTION ---------------- */
 main{
     width: 100%;
     padding: 5rem 0rem;
 }
+
+section h1{
+    grid-column: 1 / -1;
+}
+
+
+/* ---------------- RECOMMENDED SECTION ---------------- */
 .recommended_section{
     width: 100%;
     min-height: 70vh;
@@ -11,11 +17,12 @@ main{
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: min-content;
 
 }
 
 .product_box{
-    
+    display: grid;
 }
 .product_box__img{
     width: 90%;

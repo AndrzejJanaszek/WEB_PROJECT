@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <?php require_once "header.php"; ?>
+    <?php require_once "../header.php"; ?>
     <main>
         
 
     </main>
-    <?php require_once "footer.php"; ?>
+    <?php require_once "../footer.php"; ?>
 </body>
 </html>

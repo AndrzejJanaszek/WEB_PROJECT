@@ -17,7 +17,7 @@
     <main>
         <!-- //TODO:   -->
         <section class="recommended_section">
-
+            <h1>polecane przez partię</h1>
             <?php
                 require_once "connection.php";
                 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
@@ -57,15 +57,15 @@
             <!-- duże boxy -->
         </section>
         <section class="bestsellers_section">
+            <h1>bestsellery</h1>
             <!-- małe slider wczytywany boxy -->
             <?php
                 require_once "connection.php";
                 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
                 if($conn){
-                    $recommendedRESULT = $conn->query("SELECT product.id as id,  FROM product, prod_img WHERE `primary` = 1 AND id_prod = product.id ORDER BY bought_copies_count DESC limit 8");
+                    $recommendedRESULT = $conn->query("SELECT product.id, product.title, product.price, prod_img.img_name  FROM product, prod_img WHERE `primary` = 1 AND id_prod = product.id ORDER BY bought_copies_count DESC limit 8");
                     
                     while($row = mysqli_fetch_assoc($recommendedRESULT)){
-                        var_dump($row);
                         echo '
                         <div class="product_box product_box--recommended">
                             <img src="products_img/'.$row["img_name"].'" alt="" class="product_box__img">

@@ -17,7 +17,8 @@ a{
 }
 body{
     font-size: 1.6rem;
-    font-family: 'Arial', sans-serif;
+    /* font-family: 'Arial', sans-serif; */
+    font-family: 'Ubuntu', sans-serif;
 }
 input:focus, select:focus, button:focus{
     outline: none;

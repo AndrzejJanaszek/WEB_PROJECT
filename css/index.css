@@ -10,15 +10,15 @@ main{
     padding: 0 10%;
 
     display: grid;
-    grid-template-columns: repeat(5fr);
-    
+    grid-template-columns: repeat(5, 1fr);
+
 }
 
 .product_box{
     
 }
 .product_box__img{
-    max-width: 5rem;
+    width: 90%;
 }
 .product_box__content{
     
@@ -33,6 +33,29 @@ main{
     
 }
     
+
+
+
+
+/* ---------------- BESTSELLERS SECTION ---------------- */
+
+.latests_section, .bestsellers_section{
+    width: 100%;
+    min-height: 70vh;
+    padding: 0 10%;
+    
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    
+}
+
+
+
+
+
+
+
+
 
 
 

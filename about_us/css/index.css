@@ -70,10 +70,70 @@ main > section{
     font-style: italic;
     line-height: 125%;
 
-    width:60%;
+    width:65%;
+    padding:2.5% 2.5%;
+    margin:2rem 0;
+
+    box-shadow: 0 0 2.5px #000;
 }
 .author{
     font-style: normal;
 
     font-size:1.7rem;
+
+    padding-top:10px;
+}
+
+
+
+
+
+
+
+
+/* --------------------------------- RESPONSIVE --------------------------------- */
+
+@media screen and (max-width:1100px){
+    main{
+        padding:5rem 10%;
+    }
+}
+@media screen and (max-width:950px){
+    .upper_section h1{
+        font-size:2.3rem;
+    }
+    .upper_section__logo{
+        font-size:2.7rem;
+    }
+}
+@media screen and (max-width:800px){
+    .upper_section{
+        flex-direction: column;
+        align-items: center;
+    }
+    .quote{
+        width:85%;
+        padding:2.5% 2.5%;
+        margin:2rem 0;
+    }
+    .upper_section h1{
+        font-size:2rem;
+    }
+    .upper_section__logo{
+        font-size:2.7rem;
+    }
+}
+@media screen and (max-width:600px){
+    .title{
+        display: none;
+    }
+    .upper_section img{
+        height: 60px;
+    }
+    .upper_section h1{
+        font-size:4.05rem;
+    }
+    .upper_section__logo{
+        font-size:4.05rem;
+    }
 }

@@ -22,17 +22,18 @@
                 require_once "connection.php";
                 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
                 if($conn){
-                    $recommendedRESULT = $conn->query("SELECT * FROM product WHERE recommended = 1");
+                    $recommendedRESULT = $conn->query("SELECT * FROM product, prod_img WHERE recommended = 1 AND `primary` = 1 AND id_prod = product.id limit 5");
                     
                     while($row = mysqli_fetch_assoc($recommendedRESULT)){
                         echo '
                         <div class="product_box product_box--recommended">
-                            <img src="products_img/csgo1.jpg" alt="" class="product_box__img">
+                            <img src="products_img/'.$row["img_name"].'" alt="" class="product_box__img">
                             <div class="product_box__content">
                                 <div class="product_box__content__title">'.$row["title"].'</div>
                                 <div class="product_box__content__price">'.$row["price"].'</div>
                                 <button class="product_box__content__btn">
-                                    <!-- miejsce na ikonkę -->
+                                    <!-- iconka --!>
+                                    <span class="material-icons-round">shopping_basket</span>
                                 </button>
                             </div>
                         </div>
@@ -43,21 +44,45 @@
             ?>
 
 
-            <div class="product_box product_box--recommended">
+            <!-- <div class="product_box product_box--recommended">
                 <img src="" alt="" class="product_box__img">
                 <div class="product_box__content">
                     <div class="product_box__content__title"></div>
                     <div class="product_box__content__cost"></div>
                     <button class="product_box__content__btn">
-                        <!-- miejsce na ikonkę -->
                     </button>
                 </div>
-            </div>
+            </div> -->
 
             <!-- duże boxy -->
         </section>
         <section class="bestsellers_section">
             <!-- małe slider wczytywany boxy -->
+            <?php
+                require_once "connection.php";
+                $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+                if($conn){
+                    $recommendedRESULT = $conn->query("SELECT product.id as id,  FROM product, prod_img WHERE `primary` = 1 AND id_prod = product.id ORDER BY bought_copies_count DESC limit 8");
+                    
+                    while($row = mysqli_fetch_assoc($recommendedRESULT)){
+                        var_dump($row);
+                        echo '
+                        <div class="product_box product_box--recommended">
+                            <img src="products_img/'.$row["img_name"].'" alt="" class="product_box__img">
+                            <div class="product_box__content">
+                                <div class="product_box__content__title">'.$row["title"].'</div>
+                                <div class="product_box__content__price">'.$row["price"].'</div>
+                                <button class="product_box__content__btn" data-prod_id="'.$row["id"].'">
+                                    <!-- iconka --!>
+                                    <span class="material-icons-round">shopping_basket</span>
+                                </button>
+                            </div>
+                        </div>
+                        ';
+                    }
+                }                
+
+            ?>
             
         </section>
         <section class="latests_section">

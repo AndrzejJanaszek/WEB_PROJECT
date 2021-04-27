@@ -71,12 +71,14 @@ h1{
 .statute_section > ol >li > ol{
     padding-left: 3rem;
     font-weight: 400;
+    list-style: lower-alpha;
 }
 .statute_section > ol >li > ol > li{
 
 }
 .statute_section > ol >li > ol > li > ul{
     padding-left: 5rem;
+    list-style: disc;
 }
 .statute_section > ol >li > ol > li > ul > li{
 

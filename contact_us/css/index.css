@@ -5,6 +5,7 @@ main{
     align-items: center;
     width: 100%;
     padding: 4rem 10%;
+    min-height: 671px;
 }
 .main__contact{
     display: flex;

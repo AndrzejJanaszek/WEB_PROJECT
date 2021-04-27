@@ -24,7 +24,6 @@
     </div>
     <div class="shopping_cart__products_list">
         <?php
-        session_start();
             require_once "../connection.php";
             $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
             if($conn){
@@ -54,20 +53,22 @@
                 }
                 else{
                     $cookie_name = "web_project_shopping_cart";
+                    // var_dump($_COOKIE[$cookie_name]);
                     // wczytuje z plików cookie id produktów a potem z bazy dane
+
                     if(isset($_COOKIE[$cookie_name])){
                         $arr = json_decode($_COOKIE[$cookie_name]);
 
                         foreach($arr as $obj){
-
-                            $RESULT = $conn->query("SELECT * FROM product WHERE product.id = ".$obj["id"]."");
-                            $ASSOC = mysqli_fetch_assoc($RESULT);
+                            $cosID = $obj->id;
+                            $sqlRESULT = $conn->query("SELECT * FROM product WHERE product.id = ".$cosID);
+                            $ASSOC = mysqli_fetch_assoc($sqlRESULT);
                             echo '
                             <div class="product_box">
                                 <div class="product_box__name">'.$ASSOC["title"].'</div>
                                 <div class="product_box__price">'.$ASSOC["price"].'zł</div>
-                                <div class="product_box__amount">'.$obj["amount"].'</div>
-                                <div class="product_box__sum">'.($ASSOC["price"]*$obj["amount"]).'zł</div>
+                                <div class="product_box__amount">'.$obj->amount.'</div>
+                                <div class="product_box__sum">'.($ASSOC["price"]*$obj->amount).'zł</div>
                             </div>
                             ';
                         }

@@ -1,0 +1,118 @@
+main{
+    display: flex;
+    flex-direction: column;
+
+    padding:4rem 10%;
+
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+
+
+/* =============== RECOMMENDED-SECTION =============== */
+.recommended_section{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row: auto auto;
+
+    margin-bottom: 10rem;
+}
+.recommended_section h1{
+    text-transform:uppercase;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.5rem solid #000;
+    font-size:3rem;
+}
+.recommended_section h1::first-letter{
+    font-size:3.4rem;
+}
+.recommended_section__products{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+
+    min-width: 100%;
+    overflow-x: auto;
+}
+.recommended_section__products .product_box{
+    display: grid;
+    grid-template-columns: 220px;
+    grid-template-rows: 300px 55px;
+    margin-right: 5rem;
+}
+.recommended_section__products .product_box:last-child{
+    margin-right: 0;
+}
+.recommended_section__products .product_box img{
+    width:220px;
+    height: 300px;
+}
+.recommended_section__products .product_box .product_box__content{
+    display: grid;
+    grid-template-columns: 170px 50px;
+    grid-template-rows: 30px 25px;
+    grid-template-areas: 
+        "title btn"
+        "price btn"
+    ;
+
+    background-color: #fff;
+}
+.recommended_section__products .product_box .product_box__content__title{
+    grid-area: title;
+
+    font-size:1.9rem;
+    padding:0.2rem;
+    font-weight: 500;
+
+    border-left: 2px solid #000;
+
+    max-width: 170px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.recommended_section__products .product_box .product_box__content__price{
+    grid-area: price;
+    font-weight: 500;
+    align-self: center;
+    font-size:1.8rem;
+
+    padding:0.2rem;
+    padding-left:calc(0.2rem + 2px);
+
+    background-color: #000;
+    color:#fff;
+}
+.recommended_section__products .product_box .product_box__content__btn{
+    grid-area: btn;
+
+    background-color: rgb(230,0,0);
+    color:#fff;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s, color 0.3s;
+}
+.recommended_section__products .product_box .product_box__content__btn:hover{
+    background-color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+img{
+    width: 200px;
+}

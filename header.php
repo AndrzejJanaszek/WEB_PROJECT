@@ -5,7 +5,7 @@
 <?php
 session_start();
 // $mainDir = $_SERVER['DOCUMENT_ROOT']."/WEB_PROJECT"."/";
-$mainDir = "http://127.0.0.1"."/WEB_PROJEKT"."/";
+$mainDir = "http://127.0.0.1"."/WEB_PROJECT"."/";
 require_once "connection.php";
 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 ?>

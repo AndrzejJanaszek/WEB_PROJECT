@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OurGames</title>
+    <title>Koszyk | OurGames</title>
 
     <link rel="icon" type="image/png" href="../img/fav.svg"/>
 
@@ -66,9 +66,9 @@
                             echo '
                             <div class="product_box">
                                 <div class="product_box__name">'.$ASSOC["title"].'</div>
-                                <div class="product_box__price">'.$ASSOC["price"].'zł</div>
-                                <div class="product_box__amount">'.$obj->amount.'</div>
-                                <div class="product_box__sum">'.($ASSOC["price"]*$obj->amount).'zł</div>
+                                <div class="product_box__price">cena: '.$ASSOC["price"].'zł</div>
+                                <div class="product_box__amount"><input type="number" value="'.$obj->amount.'" step="1"></div>
+                                <div class="product_box__sum">'.number_format(($ASSOC["price"]*$obj->amount),2).'zł</div>
                             </div>
                             ';
                         }
@@ -95,10 +95,19 @@
 <section class="shopping_details">
     <div class="shopping_details__delivery">
         <h2>Sposób dostawy:</h2>
+        <label><input type="radio" name="delivery_method"> Odbiór w punkcie</label>
+        <label><input type="radio" name="delivery_method"> Kurier 24h</label>
+        <label><input type="radio" name="delivery_method"> Kurier 48h</label>
+        <label><input type="radio" name="delivery_method"> Kurier 24h (za pobraniem)</label>
+        <label><input type="radio" name="delivery_method"> Kurier 48h - Poczta Polska (za pobraniem)</label>
 
     </div>
     <div class="shopping_details__payment">
         <h2>Metoda płatności:</h2>
+        <label><input type="radio" name="payment_method"> Przelew gotówkowy <span class="grey">(0zł)</span></label>
+        <label><input type="radio" name="payment_method"> Karta płatnicza online <span class="grey">(0zł)</span></label>
+        <label><input type="radio" name="payment_method"> BLIK <span class="grey">(0zł)</span></label>
+        <label><input type="radio" name="payment_method"> Przy odbiorze <span class="grey">(25zł)</span></label>
         
     </div>
     <div class="shopping_details__summary">

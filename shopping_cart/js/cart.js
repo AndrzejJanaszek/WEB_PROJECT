@@ -4,12 +4,9 @@ const boxs = document.getElementsByClassName("product_box");
 
 let suma = 0;
 for(box of boxs){
-    console.log("asd");
-
     price = box.getElementsByClassName("product_box__sum")[0].textContent;
 
     suma +=parseFloat(price.slice(0, price.length-2)) ;
-    console.log(price.slice(0, price.length-2));
 }
 sumBox.textContent = suma + 'zł';
 

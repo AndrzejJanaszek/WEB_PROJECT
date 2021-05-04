@@ -16,14 +16,17 @@ main{
     border-bottom: 1px solid #000;
     padding-bottom: 0.5rem;
 }
-.product-box{
+.product_box{
     display: grid;
     grid-template-columns: 3fr 1fr 1fr 1fr;
     border-bottom: 1px solid #000;
+    padding:1rem 0;
 }
 .shopping_cart__bottom{
     display: grid;
     grid-template-columns: 2fr 1fr 2fr 1fr;
+
+    padding-top: 0.5rem;
 }
 .shopping_cart__bottom__manage button{
     outline:none;
@@ -51,11 +54,15 @@ main{
     color:var(--color--main);
 }
 .shopping_details__delivery{
+    display:flex;
+    flex-direction: column;
     border-bottom:2px solid rgb(145, 145, 145);
     padding-bottom:1rem;
     margin-bottom:4rem;
 }
 .shopping_details__payment{
+    display:flex;
+    flex-direction: column;
     border-bottom:2px solid rgb(145, 145, 145);
     padding-bottom:1rem;
     margin-bottom:4rem;

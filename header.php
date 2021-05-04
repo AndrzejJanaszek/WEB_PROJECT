@@ -13,9 +13,9 @@ $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 <header class="header">
     <div class="header__top">
         <div class="header__top__social">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a target="blank" href="https://www.facebook.com/profile.php?id=100066739583991"><i class="fab fa-facebook"></i></a>
+            <a target="blank" href="https://www.instagram.com/our_games_shop/"><i class="fab fa-instagram"></i></a>
+            <a target="blank" href="https://twitter.com/KontoNasze"><i class="fab fa-twitter"></i></a>
         </div>
         <div class="header__top__account">
             <div class="header__top__account__signup">
@@ -32,7 +32,9 @@ $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
             </div>
             <a class="header__top__account__cart" href="<?php echo "${mainDir}shopping_cart/";?>">
                 <span class="material-icons">shopping_cart</span>
-                <div class="cart__value">0,00zł</div>
+                <div class="cart__value">
+                    <!-- asdasd -->
+                </div>
             </a>
         </div>
     </div>
@@ -85,4 +87,6 @@ $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
             </div>
         </div>
     </div>
+
+    <script src="<?php echo "$mainDir";?>js/header_shopping_cart_value.js"></script>
 </header>

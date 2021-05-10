@@ -8,60 +8,64 @@
 main{
     padding:3rem 10%;
 }
-main .product_session__top{
+.product_session__top{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
     margin-bottom:5rem:
 }
-main .product_session__bottom{
+.product_session__bottom{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 5%;
     margin-top:5rem;
 }
-main .product_session__bottom h2{
+.product_session__bottom h2{
     text-align: center;
 }
 
-main .product_session__top__slider{
+.product_session__top__slider{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 0.5rem;
 }
 
-main .product_session__top__data__platforms{
+.product_session__top__data__platforms{
     display:flex;
     flex-direction:row;
     width: 100%;
 }
-main .product_session__top__data__platforms .platform_box{
+.product_session__top__data__platforms .platform_box{
     padding:1rem;
 }
-main .primary_img img{
+.primary_img img{
     max-width:600px;
 }
-main .product_session__top__description{
-    display: flex;
+.product_session__top__description{
+    /*display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-start;*/
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 41px 13px 0 24px 24px auto 43px;
 
     padding-left:0.5rem;
 }
 
-main .product_session__top__data{
+.product_session__top__data{
     display: flex;
     flex-direction: column;
 }
-main .slider__img{
+.slider__img{
     cursor: pointer;
 }
 
-main .product_session__bottom__requirements p{
+.product_session__bottom__requirements p{
     text-align: center;
 }
 
-main .product_session__top__data__accessibility{
+.product_session__top__data__accessibility{
     border: 1px solid #000;
     padding:1rem;
     font-size:2.5rem;
@@ -70,14 +74,14 @@ main .product_session__top__data__accessibility{
     color:#fff;
 }
 
- main .product_session__top__data__price{
+.product_session__top__data__price{
     border: 1px solid #000;
     text-align: center;
     padding:0.7rem;
     font-size:1.8rem;
 } 
 
-main .product_session__top__data__platforms{
+.product_session__top__data__platforms{
     /* border: 1px solid #000; */
     display: flex;
     flex-direction: row;
@@ -87,13 +91,13 @@ main .product_session__top__data__platforms{
     padding:0;
 }
 
-main .product_session__top__data__platforms .platform_box{
+.product_session__top__data__platforms .platform_box{
     flex:auto;
     border: 1px solid #000;
     text-align: center;
 }
 
-main .product_session__top__data button{
+.product_session__top__data button{
     outline: none;
     border:none;
     background-color: var(--color--main);
@@ -103,31 +107,26 @@ main .product_session__top__data button{
     cursor: pointer;
     transition: background-color 0.3s;
 }
-main .product_session__top__data button:hover{
+.product_session__top__data button:hover{
     background-color: var(--color--dark);
 }
-main .product_session__top__description{
+.product_session__top__description{
     padding:0 1rem;
     margin:0 1rem;
 }
-main .product_session__top__description h2{
+.product_session__top__description h2{
     font-size:3.5rem;
 }
-main .product_id{
+.product_id{
     font-size:1.2rem;
     color:rgb(170, 170, 170);
 
     margin-bottom:0.5rem;
 }
-main .product_session__top__description div{
+.product_session__top__description div{
     font-size:2rem;
 }
-main .product_session__top__description{
-    display:flex;
-    flex-direction: column;
-    height: 100%;
-}
-main .product_session__top__description button{
+.product_session__top__description button{
     outline: none;
     border:none;
     background-color: var(--color--main);
@@ -136,18 +135,15 @@ main .product_session__top__description button{
     font-size:2rem;
     cursor: pointer;
     transition: background-color 0.3s;
-    justify-self: flex-end;
-    align-self: flex-end
-    flex:;
     width:100%;
     /* margin-top:5rem; */
 }
-main .product_session__top__description button:hover{
+.product_session__top__description button:hover{
     background-color: var(--color--dark);
 }
-main .product_session__bottom__descritpion h2{
+.product_session__bottom__descritpion h2{
     margin:1rem 0;
 }
-main .product_session__bottom__requirements h2{
+.product_session__bottom__requirements h2{
     margin:1rem 0;
 }

@@ -47,6 +47,7 @@
         <!-- //TODO:   -->
         <section class="recommended_section">
             <h1>polecane przez partię</h1>
+            <section class="recommended_section__products">
             <?php
                 require_once "connection.php";
                 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
@@ -54,6 +55,7 @@
                 ProductBox($conn, "SELECT product.id, product.title, product.price, prod_img.img_name FROM product, prod_img WHERE recommended = 1 AND `primary` = 1 AND id_prod = product.id limit 5", true);           
 
             ?>
+            </section>
 
 
             <!-- <div class="product_box product_box--recommended">
@@ -71,26 +73,32 @@
         <section class="bestsellers_section">
             <h1>bestsellery</h1>
             <!-- małe slider wczytywany boxy -->
+            <section class="bestsellers_section__products">
             <?php
             ProductBox($conn, "SELECT product.id, product.title, product.price, prod_img.img_name  FROM product, prod_img WHERE `primary` = 1 AND id_prod = product.id ORDER BY bought_copies_count DESC limit 8");
 
             ?>
+            </section>
             
         </section>
         <section class="latests_section">
             <h1>najnowsze produkty</h1>
             <!-- TO SAMO CO WYŻEJ - małe slider wczytywany boxy -->
+            <section class="latests_section__products">
             <?php
             ProductBox($conn, "SELECT product.id, product.title, product.price, prod_img.img_name  FROM product, prod_img WHERE `primary` = 1 AND id_prod = product.id ORDER BY release_date DESC limit 8");    
 
             ?>
+            </section>
         </section>
         <section class="others_section">
             <h1>inne produkty</h1>
+            <section class="others_section__products">
             <!-- grid z grami -->
             <?php
             ProductBox($conn, "SELECT product.id, product.title, product.price, prod_img.img_name  FROM product, prod_img WHERE `primary` = 1 AND id_prod = product.id limit 50");
             ?> 
+            </section>
         </section>
 
     </main>

@@ -18,7 +18,7 @@
 
     <link rel="icon" type="image/png" href="../img/fav.svg"/>
 
-    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/product2.css">
     <link rel="stylesheet" href="../css/web.css">
 </head>
 <body>
@@ -55,7 +55,7 @@
                             }
                             else{
                                 
-                                echo '<img src="../products_img/'.$img["img_name"].'" alt="" class="slider__img">';
+                                echo '<div class="img_box"><img src="../products_img/'.$img["img_name"].'" alt="" class="slider__img"></div>';
                             }
                         }
 
@@ -70,7 +70,8 @@
                         echo '</div>
                     <div class="product_session__top__description">
                         <h2 class="product_title">'.$prodASSOC["title"].'</h2>
-                        <p class="product_id">#'.$prodASSOC["id"].'</p>
+                        <p class="product_id">ID produktu: '.$prodASSOC["id"].'</p>
+                        <h3>Gatunki:</h3>
                         <p class="categories">';
 
                             while($cat = mysqli_fetch_assoc($catRESULT)){
@@ -80,8 +81,6 @@
                             }
 
                         echo '</p>
-    
-                        <button>Zobacz więcej</button>
                     </div>
                     <div class="product_session__top__data">
                         <div class="product_session__top__data__accessibility">PRODUKT DOSTĘPNY</div>

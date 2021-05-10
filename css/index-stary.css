@@ -1,0 +1,180 @@
+main{
+    width: 100%;
+    padding: 5rem 0rem;
+}
+
+section h1{
+    grid-column: 1 / -1;
+    font-size: 2.7rem;
+    text-transform: uppercase;
+    line-height: 2;
+    border-bottom: .3rem solid black;
+    margin-bottom: 1rem;
+}
+
+
+/* ---------------- RECOMMENDED SECTION ---------------- */
+.recommended_section{
+    width: 100%;
+    padding: 0 10%;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-row-gap: 2rem;
+
+    padding-bottom: 4rem;
+}
+
+.product_box{
+    display: grid;
+    grid-template-rows: auto 85px;
+    width: 90%;
+    justify-self: center;
+}
+.product_box__img{
+    width: 100%;
+    max-height: 350px;
+}
+.product_box__content{
+    display: grid;
+    grid-template-columns: auto 50px;
+    grid-template-rows: 36px 27px;
+    grid-template-areas: 
+    "title button"
+    "price button";
+    padding-top:1rem;
+}
+.product_box__content__title{
+    grid-area:title;
+    overflow: auto;
+}
+.product_box__content__price{
+    grid-area:price;
+}
+.product_box__content__btn{
+    background-color: var(--color--main);
+    color:#fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    grid-area:button;
+}
+.product_box__content__btn:hover{
+    background-color: var(--color--dark);
+}
+    
+
+
+
+
+/* ---------------- BESTSELLERS SECTION ---------------- */
+
+.latests_section, .bestsellers_section, .others_section{
+    width: 100%;
+    padding: 0 10%;
+    
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+
+    padding-bottom: 4rem;
+}
+.latests_section .product_box__img{
+    max-height: 220px;
+}
+.bestsellers_section .product_box__img{
+    max-height: 220px;
+}
+.others_section .product_box__img{
+    max-height: 220px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------  ---------------- */
+
+
+
+
+
+
+
+
+.others_section{
+
+}
+.others_section .product_box{
+    padding-bottom:3rem;
+}
+
+
+
+
+
+
+
+
+/* --------------------------------- RESPONSIVE --------------------------------- */
+@media screen and (max-width:1550px){
+    .latests_section, .bestsellers_section, .others_section{
+        grid-template-columns: repeat(7, 1fr);
+        grid-row-gap:3rem;
+    }
+}
+@media screen and (max-width:1450px){
+    .latests_section, .bestsellers_section, .others_section{
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+@media screen and (max-width:1350px){
+    .latests_section, .bestsellers_section, .others_section{
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .recommended_section{
+        grid-template-columns: repeat(4, 1fr);
+    
+        padding-bottom: 4rem;
+    }
+}
+@media screen and (max-width:1250px){
+    .latests_section, .bestsellers_section, .others_section{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .recommended_section{
+        grid-template-columns: repeat(3, 1fr);
+    
+        padding-bottom: 4rem;
+    }
+}
+@media screen and (max-width:500px){
+    .latests_section, .bestsellers_section, .others_section{
+        padding: 0 2.5%;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .recommended_section{
+        padding: 0 2.5%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width:350px){
+    .latests_section, .bestsellers_section, .others_section{
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 6rem;
+    }
+    .recommended_section{
+        padding-bottom: 6rem;
+    }
+    .others_section .product_box{
+        padding-bottom:2rem;
+    }
+}

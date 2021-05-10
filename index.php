@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="img/fav.svg"/>
 
     <link rel="stylesheet" href="css/web.css">
-    <link rel="stylesheet" href="css/index2.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <?php require_once "header.php"; 
